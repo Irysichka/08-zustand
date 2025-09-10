@@ -33,7 +33,7 @@ export default function NotesClient({ tag }: NotesClientProps) {
 
   const { data } = useQuery<NotesResponse>({
     queryKey: ["notes", debouncedQuery, page, tag],
-    queryFn: () => fetchNotes(page, debouncedQuery, tag),
+    queryFn: () => fetchNotes(page, 10, debouncedQuery, tag),
     placeholderData: keepPreviousData,
   });
 
@@ -44,7 +44,7 @@ export default function NotesClient({ tag }: NotesClientProps) {
     
             <div className={css.app}>
       <header className={css.toolbar}>
-        <SearchBox value={query} onChange={handleChange} />
+        <SearchBox value={query}  onChange={handleChange} />
         {totalPages > 1 && (
           <Pagination totalPages={totalPages} page={page} setPage={setPage} />
         )}
