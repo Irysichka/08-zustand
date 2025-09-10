@@ -49,3 +49,9 @@ export const fetchNoteById = async (noteId: NoteId): Promise<Note> => {
   });
   return data;
 };
+
+export interface CreateNoteParams {
+  title: string;
+  content: string;
+  tag: "Todo" | "Work" | "Personal" | "Meeting" | "Shopping";
+}
