@@ -13,7 +13,7 @@ export interface NotesResponse {
 
 export const fetchNotes = async (
   page: number,
-  perPage: number,
+  perPage: number = 8,
   search?: string,
   tag?: string,
 ): Promise<NotesResponse> => {

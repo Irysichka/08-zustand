@@ -14,7 +14,7 @@ import SearchBox from "@/components/SearchBox/SearchBox";
 import { useDebounce } from "use-debounce";
 import { NotesResponse } from "@/lib/api";
 
-
+ 
 type NotesClientProps = {
   tag?: string;
 };
@@ -33,7 +33,7 @@ export default function NotesClient({ tag }: NotesClientProps) {
 
   const { data } = useQuery<NotesResponse>({
     queryKey: ["notes", debouncedQuery, page, tag],
-    queryFn: () => fetchNotes(page, 10, debouncedQuery, tag),
+    queryFn: () => fetchNotes(page, 8, debouncedQuery, tag),
     placeholderData: keepPreviousData,
   });
 
