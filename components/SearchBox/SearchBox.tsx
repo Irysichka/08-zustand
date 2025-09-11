@@ -3,6 +3,7 @@ import { useDebouncedCallback } from "use-debounce";
 import css from "./SearchBox.module.css";
 
 interface SearchBoxProps {
+   value: string;
   onSearch: (value: string) => void;
 }
 
